@@ -1,0 +1,127 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    font-family: "Arial", sans-serif;
+}
+
+body {
+    padding-top: 20px;
+}
+.container {
+    width: max-content;
+    margin: 0 auto;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #ecf0f1;
+    font-size: 0;
+}
+
+.heading {
+    color: #3a1ba2;
+    font-size: 22px;
+}
+
+.main {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.group-numbers {
+    padding-left: 58px;
+    margin-bottom: 4px;
+}
+
+.group-numbers li {
+    width: 58px;
+    height: 58px;
+    color: #e74c3c;
+    margin-right: 2px;
+    padding-top: 19px;
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.period-numbers {
+    list-style: none;
+    display: inline-block;
+    vertical-align: top;
+}
+.period-numbers li {
+    width: 58px;
+    height: 58px;
+    color: #e74c3c;
+    font-weight: bold;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 2px;
+    padding-top: 19px;
+}
+
+.column {
+    display: inline-block;
+    margin-right: 2px;
+}
+
+.blue .element {
+    background-color: #689bff;
+}
+
+.pink .element {
+    background-color: #fd9a98;
+}
+
+.yellow .element {
+    background-color: #fecb00;
+}
+
+.green .element {
+    background-color: #1fca21;
+}
+
+.element p {
+    font-size: 10px;
+    padding-top: 4px;
+}
+
+.element h3 {
+    color: #3a1ba2;
+    font-size: 18px;
+}
+
+.element {
+    width: 58px;
+    height: 58px;
+    margin-bottom: 2px;
+    text-align: center;
+}
+
+footer {
+    padding-left: 58px;
+}
+
+h2 {
+    color: #e74c3c;
+    font-size: 14px;
+    display: inline-block;
+    width: 118px;
+    margin-right: 2px;
+    vertical-align: middle;
+}
+.lanthanoids .element {
+    display: inline-block;
+    margin-right: 2px;
+    vertical-align: middle;
+}
+
+.actioids .element {
+    display: inline-block;
+    margin-right: 2px;
+    vertical-align: middle;
+}
