@@ -14,11 +14,9 @@
 
 .box {
     background-color: #808080;
-    display: inline-block;
 }
 
 nav {
-    width: 1400px;
     height: 80px;
     margin-bottom: 20px;
 }
@@ -29,30 +27,39 @@ nav {
 
 .top-box-big {
     width: 907px;
+    width: calc(((927 * 100) / 1400) * 1% - 20px);
     height: 460px;
     margin-right: 20px;
+    display: inline-block;
 }
 
 .top-box-small {
     width: 473px;
+    width: calc(((473 * 100) / 1400) * 1%);
     height: 460px;
+    display: inline-block;
 }
 
 .bottom-box-1 {
     width: 670px;
+    width: calc(((690 * 100) / 1400) * 1% - 20px);
     height: 404px;
     margin-right: 20px;
     padding: 20px;
     vertical-align: top;
+    display: inline-block;
 }
 
 .bottom-box-2 {
     width: 710px;
+    width: calc(((710 * 100) / 1400) * 1%);
     height: 404px;
+    display: inline-block;
 }
 
 .inner-box {
-    width: 305px;
+    width: 300px;
+    width: calc((100% - 20px) / 2);
     height: 364px;
     display: inline-block;
     background-color: #d9d9d9;
