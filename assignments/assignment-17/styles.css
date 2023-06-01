@@ -4,6 +4,16 @@
     box-sizing: border-box;
 }
 
+.relative-position {
+    margin: 100px 550px;
+}
+
+.relative-position h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+
 .box1 {
     width: 500px;
     height: 500px;
@@ -45,4 +55,152 @@
     position: relative;
     top: 50px;
     left: 50px;
+}
+
+.absolute-position {
+    max-width: 800px;
+    height: 800px;
+    margin: 0 auto;
+    padding: 50px;
+    background-color: azure;
+}
+
+.absolute-position h1 {
+    font-size: 36px;
+    text-align: center;
+    margin-bottom: 50px;
+}
+.letter-e {
+    position: relative;
+    display: inline-block;
+    margin-left: 50px;
+}
+
+.letter-e .vertical {
+    width: 25px;
+    height: 200px;
+    background-color: #f00;
+}
+
+.letter-e .horizontal {
+    width: 150px;
+    height: 25px;
+    background-color: #f00;
+}
+
+.letter-e .horizontal-1 {
+    position: absolute;
+    top: 0;
+}
+
+.letter-e .horizontal-2 {
+    position: absolute;
+    top: calc((200px - 75px) / 2 + 25px);
+}
+
+.letter-e .horizontal-3 {
+    position: absolute;
+    bottom: 0;
+}
+
+.sign-plus {
+    position: relative;
+    display: inline-block;
+    margin-left: 200px;
+    vertical-align: top;
+}
+.sign-plus .vertical {
+    width: 25px;
+    height: 200px;
+    background-color: #f00;
+    position: absolute;
+    left: calc((200px - 25px) / 2);
+}
+
+.sign-plus .horizontal {
+    width: 200px;
+    height: 25px;
+    background-color: #f00;
+    position: absolute;
+    top: calc((200px - 25px) / 2);
+}
+
+.letter-o {
+    position: relative;
+    margin-left: 300px;
+    display: inline-block;
+    vertical-align: top;
+}
+
+.letter-o .body {
+    background-color: #f00;
+}
+
+.letter-o .vertical-1 {
+    width: 25px;
+    height: 200px;
+    position: absolute;
+    left: 0;
+}
+
+.letter-o .vertical-2 {
+    width: 25px;
+    height: 200px;
+    position: absolute;
+    left: 75px;
+}
+
+.letter-o .horizontal-1 {
+    width: 100px;
+    height: 25px;
+    position: absolute;
+    top: 0px;
+}
+
+.letter-o .horizontal-2 {
+    width: 100px;
+    height: 25px;
+    position: absolute;
+    top: 200px;
+}
+
+.base {
+    position: relative;
+    margin-top: 200px;
+    margin-left: 200px;
+}
+
+.base .body {
+    background-color: #f00;
+}
+
+.scale {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+}
+
+.scale-1 {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+}
+
+.scale-2 {
+    position: absolute;
+    top: 0px;
+    left: calc(400px - 50px);
+}
+
+.scale-3 {
+    position: absolute;
+    top: calc(50px + 25px);
+    left: calc((400px - 50px) / 2);
+}
+
+.horizontall {
+    width: 400px;
+    height: 25px;
+    position: absolute;
+    top: 50px;
 }
