@@ -1,15 +1,239 @@
+body {
+    padding: 50px 400px;
+}
 .part-1 {
     width: 200px;
     height: 200px;
-    display: inline-block;
-    margin-right: 400px;
+    margin-bottom: 100px;
+
     background-color: aqua;
     transition-property: background-color, width, height;
-    transition-duration: 2s;
+    transition-duration: 1s;
 }
 
 .part-1:hover {
     background-color: greenyellow;
     width: 300px;
     height: 300px;
+}
+
+.container {
+    width: 300px;
+    height: 300px;
+    margin-bottom: 100px;
+    background-color: #f0f0f0;
+    position: relative;
+    vertical-align: middle;
+}
+.part-2 {
+    width: 100px;
+    height: 100px;
+    background-color: aqua;
+    position: absolute;
+    animation: squarePath 5s infinite ease-in-out;
+}
+
+/* @keyframes squarePath {
+    0% {
+        top: 0;
+        left: 0;
+    }
+    25% {
+        top: 0;
+        right: 0;
+    }
+    50% {
+        bottom: 0;
+        right: 0;
+    }
+    75% {
+        bottom: 0;
+        left: 0;
+    }
+    100% {
+        top: 0;
+        left: 0;
+    }
+} */
+
+@keyframes squarePath {
+    0% {
+        top: 0;
+        left: 0;
+    }
+    25% {
+        top: 0;
+        left: calc(100% - 100px);
+    }
+    50% {
+        top: calc(100% - 100px);
+        left: calc(100% - 100px);
+    }
+    75% {
+        top: calc(100% - 100px);
+        left: 0;
+    }
+    100% {
+        top: 0;
+        left: 0;
+    }
+}
+
+/* .part-2 {
+    animation-timing-function: ease-in-out;
+}
+*/
+/* @keyframes squarePath {
+    0%,
+    100% {
+        top: 0;
+        right: 0;
+    }
+
+    25% {
+        top: 0;
+        left: 100px;
+    }
+    50% {
+        bottom: 0;
+        left: 100px;
+    }
+    75% {
+        right: 0;
+        bottom: 0;
+    }
+}
+
+.part-2 {
+    animation-timing-function: ease-in-out;
+} */
+/* 
+.container-2 {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 1px dashed black;
+}
+.sun {
+    width: 100px;
+    height: 100px;
+    background-color: #ffd700;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+.earth {
+    width: 50px;
+    height: 50px;
+    background-color: #1e90ff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: -7%;
+    
+    animation: orbit-earth 10s linear infinite; 
+}
+@keyframes orbit-earth {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.moon {
+    width: 20px;
+    height: 20px;
+    background-color: #d3d3d3;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 85%; 
+    animation: orbit-moon 5s linear infinite;
+}
+
+@keyframes orbit-moon {
+    0% {
+        transform-origin: 0% 0%;
+        transform: translateX(-15%) rotate(0deg);
+    }
+    100% {
+        transform-origin: 0% 0%;
+        transform: translateX(-15%) rotate(360deg);
+    }
+} */
+
+/* .container-2 {
+    position: relative;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    border: 1px dashed black;
+    animation: orbit-sun 10s linear infinite;
+}
+
+@keyframes orbit-sun {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+} */
+
+.container-2 {
+    height: 300px;
+    width: 300px;
+    position: relative;
+}
+
+.sun {
+    width: 100px;
+    height: 100px;
+    background-color: #ffd700;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+}
+
+.earth {
+    width: 50px;
+    height: 50px;
+    background-color: #1e90ff;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 0;
+
+    animation: orbit-earth 10s linear infinite;
+}
+
+@keyframes orbit-earth {
+    0% {
+        transform-origin: 0% 0%;
+        transform: rotate(0deg);
+    }
+    25% {
+        transform-origin: 0, 50%;
+        transform: translateY(50%) rotate(90deg);
+    }
+
+    50% {
+        transform-origin: 50% 100%;
+        transform: translateX(50%) rotate(180deg);
+    }
+
+    75% {
+        transform-origin: 100% 50%;
+        transform: translateY(100%) rotate(270deg);
+    }
+    100% {
+        transform-origin: 0% 0%;
+        transform: translateX(100%) rotate(360deg);
+    }
 }
