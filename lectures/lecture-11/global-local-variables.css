@@ -1,0 +1,12 @@
+:root {
+    --global-color: blue;
+}
+
+.container {
+    --local-color: red;
+    color: var(--global-color); /* Accessing global variable */
+}
+
+.container p {
+    color: var(--local-color); /* Accessing local variable */
+}
