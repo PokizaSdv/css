@@ -10,3 +10,32 @@
 .container p {
     color: var(--local-color); /* Accessing local variable */
 }
+
+/* CSS variables and its advantages
+CSS variables, also known as custom properties, are a powerful feature introduced in CSS that allow you to define reusable values and use them throughout your stylesheets. They provide a way to store and manipulate values, making your stylesheets more dynamic and maintainable.
+
+Advantages of using CSS variables:
+
+Reusability and Consistency: CSS variables allow you to define a value once and use it in multiple places within your stylesheets. This promotes consistency in your design as you can easily update the value of a variable, and the change will be reflected wherever it is used. It eliminates the need for repetitive manual changes, reducing the risk of errors and making your code more maintainable.
+Easy Maintenance: With CSS variables, you can centralize the management of commonly used values. By defining variables for things like colors, font sizes, spacing, or breakpoints, you can easily update these values in one place, and the changes will be applied throughout your stylesheets. This simplifies maintenance and makes your code more organized.
+Readability and Understandability: By using CSS variables, you can give meaningful names to values, making your code more readable and understandable. It improves the clarity of your stylesheets and helps other developers (or even your future self) better understand the purpose and context of different values. */
+
+/* Defining and using CSS variables
+Defining and using CSS variables, also known as custom properties, is a straightforward process. Here's a step-by-step guide:
+
+Define a CSS Variable
+CSS variables are defined using the -- prefix followed by a name and a value. Variables are typically defined in a global scope, such as the :root selector or a specific container element. Here's an example of defining a CSS variable for the primary color:
+
+:root { --primary-color: #007bff; } 
+Use the CSS Variable
+To use a CSS variable, you can reference it using the var() function. Provide the variable name as an argument to the var() function wherever you want to use the value. Here's an example of using the previously defined --primary-color variable:
+
+.button { background-color: var(--primary-color); } 
+In this example, the background-color property of the .button class is set to the value of the --primary-color variable.
+
+ */
+
+/* Global vs. local scope for variables
+In CSS (Cascading Style Sheets), there is no concept of variables with global or local scopes like in programming languages. CSS variables, also known as custom properties, are scoped to the element they are defined on and can be accessed by their children elements.
+
+When you define a CSS variable, it becomes available to all the child elements within the scope of the element where it is defined. This means that if you define a variable at the root level, such as on the :root selector, it will be accessible throughout the entire document. However, if you define a variable within a specific selector, it will be limited to that selector and its children. */
