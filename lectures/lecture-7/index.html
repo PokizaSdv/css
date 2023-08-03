@@ -60,3 +60,115 @@
         <a href="./all.html">See All</a>
     </body>
 </html>
+
+<!--  Font Categories
+In typography, fonts can be broadly categorized into a few main types. This categorization is based on visual characteristics, history, and use-cases. Here's a basic introduction to the major categories:
+
+Serif Fonts: Serif fonts are characterized by small lines or strokes attached to the ends of larger strokes in each letter and symbol. The "serifs" are these embellishing strokes. Serif fonts are often used in more traditional or formal contexts. They're also commonly used in print due to their readability. Times New Roman and Georgia are examples of Serif fonts.
+Sans-Serif Fonts: Sans-serif fonts, as the name suggests ("sans" is French for "without"), do not have the small lines at the end of the strokes. They have a more modern and clean appearance compared to serif fonts and are commonly used in digital media. Examples of sans-serif fonts include Arial and Helvetica.
+Script Fonts: Script fonts emulate handwriting and calligraphy. They can range from formal to casual based on their characteristics. These fonts are typically used for invitations, headings, and logos, but not for body text, as they can be hard to read in large amounts. Examples include Brush Script and Lucida Calligraphy.
+Display or Decorative Fonts: These fonts are typically used for large headings or logos, and they often have unique, creative designs to make a big impact. However, they are not suited for body text as their distinctive features can become overwhelming and hard to read at smaller sizes. Examples include Impact and Comic Sans.
+Monospace Fonts: In a monospace font, each character occupies the same amount of horizontal space. This is in contrast to other font categories where different characters (like 'i' and 'w') take up different amounts of space. Monospace fonts are often used in coding or for a typewriter effect. Courier New is an example of a monospace font.
+Understanding these categories can help you make more effective decisions in typography. The right font can both set the appropriate mood and increase the usability of your designs.
+
+Choosing Between Serif and Sans-serif Fonts
+Examples of popular serif fonts include:
+
+Times New Roman
+Georgia
+Garamond
+Baskerville
+Examples of popular sans-serif fonts include:
+
+Arial
+Helvetica
+Verdana
+Roboto
+The choice between serif and sans-serif fonts can depend on several factors:
+
+Medium: Serif fonts are often easier to read in print, while sans-serif fonts are typically easier to read on screens.
+Audience and Purpose: Serif fonts can give a more formal, traditional feel, while sans-serif fonts can give a more modern, clean feel. You might choose a font based on the tone you want to set and the expectations of your audience.
+Design Considerations: The font should complement the overall design of the page or document. A more decorative serif font might pair well with a classical, ornate design, while a minimalist design might be better suited to a simple sans-serif font.
+Readability: Regardless of other considerations, the primary purpose of text is to be read. If a font isn't easily readable, it's not doing its job. Always consider readability when choosing a font.
+Remember, fonts can greatly impact the perception and usability of the content, so choosing the right typeface is crucial in design. -->
+
+<!-- Font properties | Size, Weight, Style
+font-size: This CSS property sets the size of the font. The value of this property can be specified in a number of different units, including pixels (px), points (pt), percentages (%), ems (em), rems (rem), and others. For example, to set the font size to 16 pixels, you would use the rule font-size: 16px;.
+font-weight: This CSS property sets the weight (or thickness) of the font. It can take a number of values, including normal, bold, bolder, lighter, and numeric values from 100 to 900 in increments of 100. The numeric values correspond to the "weight" of the font, where 400 is normal and 700 is the equivalent of bold. For example, to set the font weight to bold, you would use the rule font-weight: bold; or font-weight: 700;.
+font-style: This CSS property sets the style of the font, generally used to specify italic text. It can take three values: normal, italic, and oblique. For example, to set the font style to italic, you would use the rule font-style: italic;.
+CSS
+p {
+    font-size: 18px;
+    font-weight: bold;
+    font-style: italic;
+} -->
+
+<!-- Font properties | Family
+Font Family and Font Stack
+In CSS, the font-family property is used to specify the typeface that will be used in the rendering of the text. This can include a "font stack", which is a list of font family names listed in order of preference. The browser will attempt to use the first font in the list, and if that is unavailable, it will move to the next, and so on.
+
+Here's an example:
+
+p { font-family: Arial, Helvetica, sans-serif; }
+
+In this example, the browser will attempt to use Arial. If Arial is unavailable, it will try Helvetica, and if neither are available, it will use the default sans-serif font.
+
+Google Fonts
+Google Fonts is a free service that offers a collection of fonts that are easy to use on your website. To use Google Fonts, you search for a font you like, and Google provides a <link> tag or @import statement that you can use to fetch the font.
+
+Option-1
+For example, to use the Poppins font, you would include the following in your HTML head tag, before any .css stylesheets.
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+
+And in your CSS, you would use:
+
+body { font-family: 'Poppins', Arial, sans-serif; }
+
+Option-2
+Copy the @import statement from Google Fonts.
+
+For example:
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+Paste it in the first line of your .css file.
+
+Option-3
+Download font files and move the necessary ones to your project folder, inside fonts folder.
+
+And in your .css file:
+
+
+
+Note that the browser will only download the needed font file when it encounters this CSS rule, and it will be cached for future use. This can make @font-face a more efficient method for loading fonts, as the font files can be reused across multiple webpage. -->
+
+<!-- Fonts | Text, Line, And Letter  
+color: This property sets the color of the text. The value can be specified in several ways, such as by a color name (red, green, etc.), a hexadecimal value (#FF0000 for red, for instance), an RGB value (rgb(255, 0, 0) for red), or an HSL value (hsl(0, 100%, 50%) for red).
+text-align: This property sets the horizontal alignment of inline content like text. Possible values include left, right, center, and justify.
+text-decoration: This property is used to set the text formatting to underline, overline, line-through or none. It can also be used to set the color and style (solid, double, dotted, dashed, wavy) of these lines.
+text-transform: This property controls the capitalization of text. It can be set to none, capitalize (first letter of each word is capitalized), uppercase (all letters are capitalized), or lowercase (all letters are made lowercase).
+line-height: This property specifies the amount of space used for lines of text. It's often used to control the vertical space between lines of text (called "leading" in typography). The value can be a specific measurement, or a unitless number, which is a multiplier of the font size. For example, if the font size is 16px and line height is 1.5, the lines of text will be 24px apart.
+letter-spacing: This property controls the amount of space between letters. It can be set to any length value, like px, em, or rem, or to normal, which resets to the default spacing. Negative values are allowed, which can bring letters closer together.
+CSS
+h1 {
+    letter-spacing: 2px;
+}
+
+h2 {
+    text-transform: capitalize;
+}
+
+p {
+    color: rgb(0, 0, 255);
+    text-align: center;
+    line-height: 2;
+}
+
+a {
+    text-decoration: underline red;
+} -->
