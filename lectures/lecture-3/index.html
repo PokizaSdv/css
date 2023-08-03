@@ -37,3 +37,52 @@
         <a href="./author.html">About the Author</a>
     </body>
 </html>
+
+<!-- External CSS refers to the method of linking an HTML document to a separate CSS file. CSS, or Cascading Style Sheets, is a language used to describe the look and formatting of a document written in HTML. An external CSS file is created with the .css extension and contains various CSS rules that are applied globally to the HTML document.
+
+The <link> element in HTML is used to link external resources to the HTML document. One of the most common uses of the <link> tag is to link an external CSS file to the HTML document, but it can also be used for other purposes such as linking to an icon as well.
+
+The <link> tag is a self-closing tag element, meaning it does not have a closing tag. It is typically placed within the <head> element of an HTML document.
+
+Here is an example of the <link> tag being used to link to an external CSS file:
+
+
+
+Here are the main attributes used with the <link> element:
+
+In this case, "rel" is set to "stylesheet" to indicate that the linked resource is a stylesheet, "type" is set to "text/css" to indicate the MIME type of the resource, and "href" is set to the URL of the CSS file.
+
+1. rel: This is a required attribute, which defines the relationship between the HTML document and the linked resource. Common values for this attribute include "stylesheet" (for linking to a CSS file), "icon" (for linking to a favicon), "alternate" (for linking to an alternate version of a web page), "canonical" (for defining the canonical URL for a web page), and so on.
+
+2. href: This attribute specifies the URL of the linked resource. It can be an absolute URL (including the protocol and domain) or a relative URL (relative to the location of the current document).
+
+3. type: This attribute specifies the MIME type of the linked resource. For example, when linking to a CSS file, the type would be "text/css". This attribute is not required in HTML5.
+
+4. media: This attribute specifies on what device the linked resource will be displayed. It is mainly used with CSS media queries. For example, you might link to a CSS file that is only applied when the document is printed by setting media="print".
+
+5. sizes: This attribute specifies the sizes of icons for visual media. This is used when rel="icon" is set. For example, sizes="16x16 32x32" means the icon can be displayed at 16x16 or 32x32 pixels.
+
+6. crossorigin: This attribute is used when fetching the resource, it indicates whether CORS (Cross Origin Resource Sharing) must be used when requesting the resource. It can have two values "anonymous" and "use-credentials".
+
+Here are some benefits and advantages of using external CSS:
+
+Site-wide Consistency
+One of the primary benefits of using an external CSS file is the ability to maintain a consistent design throughout the entire website. The same CSS file can be linked to any number of HTML pages. Therefore, any change in the CSS file will be reflected on all the pages linked to it.
+
+Code Reusability
+By using an external CSS file, you can write CSS code once and then reuse it across multiple web pages. This can save a significant amount of time and effort when designing a website.
+
+Easy Maintenance
+If you want to update the look of your website, you only need to make changes in one place - the external CSS file. This is much easier than having to update the CSS in each individual HTML file.
+
+Page Load Speed
+When a user first visits your website, the browser downloads the CSS file and caches it. For subsequent visits, the browser can load the page faster because it doesn't have to re-download the CSS file. This can improve the loading speed of your web pages and provide a better user experience.
+
+Separation of Content and Design
+Using external CSS helps to keep the content (HTML) separate from the design (CSS). This makes the code cleaner and easier to understand. It also allows developers and designers to work independently on the same project.
+
+SEO Benefits
+Clean code makes it easier for search engine spiders to crawl and index your website. By using an external CSS file, you can reduce the amount of code on your web pages, which can potentially improve your search engine rankings.
+
+Accessibility
+External CSS allows you to create different stylesheets for different devices or different settings. For example, you could create a stylesheet for print, where you remove the background color and images, change the font size, etc., to ensure the page prints well. Or you could create different stylesheets for desktop and mobile devices to ensure your website is responsive. -->
