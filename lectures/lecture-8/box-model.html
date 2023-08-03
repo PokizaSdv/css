@@ -20,3 +20,289 @@
         </section>
     </body>
 </html>
+
+<!-- Border properties
+Border Style
+border-style: This property specifies the style of the border. It can take various values, including:
+
+solid: Creates a solid line border.
+dashed: Creates a dashed line border.
+dotted: Creates a dotted line border.
+double: Creates a double line border.
+none: Removes the border.
+hidden: Creates a hidden border, similar to none, but still takes up space.
+The border-style property can take one, two, three, or four values, and these values will be applied to all four borders of an element, depending on the number of values provided:
+
+One value: The style will apply to all four borders. For example, border-style: solid; will make all four borders solid.
+Two values: The first style will apply to the top and bottom borders, and the second to the right and left borders. For example, border-style: solid dotted; will make the top and bottom borders solid, and the right and left borders dotted.
+Three values: The first style will apply to the top border, the second to the right and left borders, and the third to the bottom border. For example, border-style: solid dotted double; will make the top border solid, the right and left borders dotted, and the bottom border double.
+Four values: Each style will apply to one border, in the order top, right, bottom, left (clockwise from the top). For example, border-style: solid dotted double dashed; will make the top border solid, the right border dotted, the bottom border double, and the left border dashed.
+Border Width
+border-width: This property defines the width of the border. It can be specified using different units such as pixels (px), root em (rem), percentages (%), or other valid CSS length units.
+
+You can set a single value for all sides or use individual properties like border-top-width, border-right-width, border-bottom-width, and border-left-width to define different widths for each side.
+
+Border Color
+border-color: This property sets the color of the border. It can be specified using named colors, hexadecimal values (#rrggbb), RGB values (rgb(r, g, b)), or HSL values (hsl(h, s, l)).
+
+Like border-width, you can set a single value for all sides or use individual properties like border-top-color, border-right-color, border-bottom-color, and border-left-color to set different colors for each side.
+
+Border Radius
+border-radius: This property is used to create rounded corners for the border. It defines the radius of each corner individually or uses the shorthand property border-radius to set the same radius for all corners. The value can be specified in pixels (px), percentages (%), or other length units.
+
+Like border-style, border-radius can take one, two, three, or four values:
+
+One value: This radius is applied to all four corners. For example, border-radius: 10px; will apply a 10 pixel radius to all four corners, rendering them as quarter-circles.
+Two values: The first value applies to the top-left and bottom-right corners, and the second value applies to the top-right and bottom-left corners. For example, border-radius: 10px 5px; will apply a 10 pixel radius to the top-left and bottom-right corners, and a 5 pixel radius to the other two corners.
+Three values: The first value applies to the top-left corner, the second value applies to the top-right and bottom-left corners, and the third value applies to the bottom-right corner. For example, border-radius: 10px 5px 15px; will apply a 10 pixel radius to the top-left corner, a 5 pixel radius to the top-right and bottom-left corners, and a 15 pixel radius to the bottom-right corner.
+Four values: Each value applies to one corner, in the order top-left, top-right, bottom-right, bottom-left (clockwise from the top-left). For example, border-radius: 10px 5px 15px 20px; will apply a 10 pixel radius to the top-left corner, a 5 pixel radius to the top-right corner, a 15 pixel radius to the bottom-right corner, and a 20 pixel radius to the bottom-left corner.
+Shorthand
+border: This shorthand property allows you to set the border-width, border-style, and border-color properties in one line.
+
+The order of values is as follows: border-width, border-style, and border-color. For example, border: 1px solid black sets a solid black border with a width of 1 pixel for all sides.
+
+These border properties can be combined and customized to achieve various effects. By using different values for each property, you can create borders of different styles, widths, colors, and corner shapes.
+
+Examples
+.border-example { border-style: dashed; } 
+This will create a dashed border around the elements with the class "border-example".
+
+.border-example { border-width: 2px; } 
+This will set a border width of 2 pixels for the elements with the class "border-example".
+
+.border-example { border-color: red; } 
+This will set a red color for the border of elements with the class "border-example".
+
+.border-example { border: 1px solid blue; } 
+This will create a solid blue border with a width of 1 pixel for the elements with the class "border-example".
+
+.border-example { border-radius: 10px; } 
+This will create rounded corners with a radius of 10 pixels for the elements with the class "border-example".
+ -->
+
+<!-- Margin Properties
+Margin
+The CSS margin properties are used to create space around elements, outside of any defined borders. Here are the individual properties:
+margin-top: Specifies the top margin of an element.
+margin-right: Specifies the right margin of an element.
+margin-bottom: Specifies the bottom margin of an element.
+margin-left: Specifies the left margin of an element.
+Example:
+
+div { 
+    margin-top: 10px; 
+    margin-right: 20px; 
+    margin-bottom: 30px; 
+    margin-left: 40px; 
+} 
+This example applies 10px of margin to the top, 20px to the right, 30px to the bottom, and 40px to the left of the div.
+
+Margin Shorthand
+You can use the shorthand margin property to specify all four sides at once. The margin property can take one, two, three, or four space-separated values.
+
+One value: Applies the same margin to all four sides.
+margin: 10px;
+
+Two values: The first value applies to the top and bottom, the second value applies to the right and left.
+margin: 10px 20px;
+
+Three values: The first value applies to the top, the second value applies to the right and left, and the third value applies to the bottom.
+margin: 10px 20px 30px;
+
+Four values: Each value applies to one side in the following order: top, right, bottom, left (clockwise).
+margin: 10px 20px 30px 40px;
+
+These shorthand notations make it easy and quick to style your HTML elements.
+
+Margin Collapsing
+Margin collapse is a concept in CSS that describes the behavior of vertical (top and bottom) margins. When the vertical margins of two elements are touching, instead of adding together, they collapse to the value of the larger margin. This can make the spacing between elements seem smaller than expected.
+
+If you have two elements, the first with a margin-bottom of 20px, and the second with a margin-top of 30px, you might expect that the total space between the two elements would be 50px (20px + 30px). But due to margin collapsing, the space is not additive. Instead, the larger of the two margins is used. So in this case, the actual space between the two elements will be 30px, not 50px.
+
+Here's a bit more detail:
+
+Margin collapse rules:
+Adjacent siblings: Adjacent siblings are elements that share the same parent and are next to each other. The margins between these elements will collapse to the size of the largest margin.
+Parent and first/last child: If a parent element has no border, padding, or inline content separating its margin from that of its first or last child, the parent's margin will collapse with the child's.
+Empty blocks: If a block has no content, height, or padding, and has a margin-top and margin-bottom, those margins will collapse.
+Exceptions to margin collapse:
+While margin collapsing is often useful, there are certain cases where it does not occur:
+
+Horizontal margins: Margin collapsing only happens vertically (with top and bottom margins), not horizontally (left and right).
+Non-block elements: Inline-block elements, floated elements, absolutely positioned elements, and flex items do not participate in margin collapse.
+Fixed height: If an element has a fixed height, it prevents margins from collapsing.
+Flex and Grid layouts: CSS Flexbox and Grid layouts have their own layout algorithms and do not participate in standard block layout margin collapsing.
+Elements with overflow other than visible: When an element's overflow property is set to auto, hidden, scroll, or overlay, it creates a new block formatting context. This means margins inside that element will not collapse with margins outside it.
+
+
+Padding
+Padding is the space between an element's content and its border. It's like the cushion inside a box.
+The CSS padding properties are used to generate space around content, within an element. The padding clears an area around the content (inside the border) of an element. Here are the individual properties:
+
+padding-top: Specifies the top padding of an element.
+padding-right: Specifies the right padding of an element.
+padding-bottom: Specifies the bottom padding of an element.
+padding-left: Specifies the left padding of an element.
+Example:
+
+div { 
+    padding-top: 10px; 
+    padding-right: 20px; 
+    padding-bottom: 10px; 
+    padding-left: 20px; 
+} 
+This example applies 10px of padding to the top and bottom of the div, and 20px of padding to the right and left sides.
+
+Padding Shorthand:
+Instead of specifying each side's padding individually, you can use the shorthand padding property to specify all four sides at once. The padding property can take one, two, three, or four space-separated values.
+
+One value: Applies the same padding to all four sides.
+padding: 10px;
+
+Two values: The first value applies to the top and bottom, the second value applies to the right and left.
+padding: 10px 20px;
+
+Three values: The first value applies to the top, the second value applies to the right and left, and the third value applies to the bottom.
+padding: 10px 20px 30px;
+
+Four values: Each value applies to one side in the following order: top, right, bottom, left (clockwise).
+padding: 10px 20px 30px 40px; -->
+
+<!--  Removing default paddings and margins
+In the world of web development, CSS is the language that gives our websites and web applications their style and appearance. However, different browsers have different default stylesheets, which means the same HTML code can look different across various browsers. These default styles include properties such as margins and paddings that come predefined for HTML elements. This is where CSS resets come in - a technique that helps to ensure consistency across multiple browsers by resetting or overriding these defaults.
+
+In this article, we will cover how to reset default paddings and margins in HTML elements using a wildcard selector in CSS.
+
+Wildcard Selector
+The wildcard selector in CSS is represented by an asterisk (*). This special selector is used to select all elements on a webpage. By applying styles to this wildcard selector, you're effectively applying those styles to every single element on the page.
+
+CSS Reset: Margins and Paddings
+To reset the default margins and paddings of all HTML elements, we can use the wildcard selector and set both the margin and padding properties to 0. Here's how you can do it:
+
+* { 
+  margin: 0; 
+  padding: 0; 
+} 
+This CSS rule will remove all default margins and paddings from all HTML elements on your webpage. The margin: 0; line sets the margin of all elements to 0, and similarly, padding: 0; sets the padding of all elements to 0. -->
+
+<!--  Width and height properties
+Width
+The width property in CSS specifies the width of an element's content area. The content area does not include padding, borders, or margins — it only includes the area where the content of the element is located.
+
+div {
+  width: 500px; 
+} 
+In the above example, the div element will have a width of 500 pixels.
+
+The width property can take several types of values:
+
+Length values: These are typically specified in pixels (px), em (em), rem (rem) or percentage (%). A percentage value sets the width relative to the parent element's width.
+Auto: The browser calculates the width. This is the default value.
+Intrinsic & extrinsic values: max-content, min-content, fit-content, and none are new ways of defining width based on the content itself. *We will learn about them during the projects.
+Height
+The height property in CSS specifies the height of an element's content area, similar to the width property. Again, this does not include padding, borders, or margins, just the area where the content is located.
+
+div { 
+  height: 200px; 
+} 
+In the above example, the div element will have a height of 200 pixels.
+
+The height property can take several types of values:
+
+Length values: Like the width property, these can be specified in pixels (px), em (em), or percentage (%). A percentage value sets the height relative to the height of the parent element. Note that percentage height only works if the parent has a set height.
+Auto: The browser calculates the height. This is the default value.
+Intrinsic & extrinsic values: max-content, min-content, fit-content, and none are new ways of defining height based on the content itself. *We will learn about them during the projects.
+Minimum width
+The min-width property in CSS is used to set the minimum width of a given element. It prevents the used value of the width property from becoming smaller than the value specified for min-width.
+
+This can be particularly useful when creating a responsive design, where the width of an element should shrink on smaller screens but not below a certain point.
+
+Here's an example:
+
+.container { 
+    min-width: 300px; 
+    width: 100%; 
+} 
+In this example, the .container element will take up 100% of the width of its parent element, but it won't shrink below 300px, no matter how small the viewport becomes.
+
+Maximum Width
+The max-width property in CSS is used to set the maximum width of a given element. It prevents the used value of the width property from becoming larger than the value specified for max-width.
+
+Like min-width, max-width is also very useful in responsive designs. It allows an element to expand to fill available space while not exceeding a certain size.
+
+Here's an example:
+
+.container { 
+    max-width: 1200px; 
+    width: 100%; 
+} 
+In this example, the .container element will take up 100% of the width of its parent element, but it won't grow larger than 1200px, no matter how wide the viewport becomes.
+
+Combined
+Often, you might find min-width and max-width being used together in CSS. This allows developers to create a "range" in which the width of the element can vary. Here's an example:
+
+.container { 
+    min-width: 300px; 
+    max-width: 1200px; 
+    width: 100%; 
+} 
+In this case, the width of the .container element is quite flexible. It will be 100% of its parent's width, but it will never become smaller than 300px or larger than 1200px, thus providing control over the element's resizing.
+
+
+
+Setting width: 100% is often used in responsive design to make an element stretch to fill the full width of its parent container. However, it's not always necessary to explicitly set width: 100%. For instance, when using min-width or max-width properties, the width property doesn't necessarily need to be declared. This is because block-level elements, like divs, naturally expand to fill the width of their parent container, without needing an explicit width. If you set max-width, the element will stretch to the maximum width, but won't exceed the limit you set. Conversely, when you set min-width, the element won’t shrink below the specified width, regardless of the size of the viewport. In both cases, explicitly setting width: 100% can be superfluous. However, the exact behavior might vary based on the specific context and the other CSS rules applied to the element or its parents. -->
+
+<!-- Understanding the CSS box model
+The box model is a foundational concept in CSS that defines the structure and layout of elements on a webpage. It consists of four components: content, padding, border, and margin.
+
+Content: The content area represents the actual content within an element, such as text, images, or other HTML elements. It is defined by the width and height properties applied to the element. The content area is where the primary content of the element resides.
+Padding: The padding is the space between the content and the element's border. It provides a buffer area around the content, helping to separate it from the border. Padding can be applied to the top, right, bottom, and left sides of an element. It increases the overall size of the element, expanding the space between the content and the border.
+Border: The border surrounds the padding and content of an element, creating a visible boundary. It can have its own width. This contributes to the size of the element that affect the layout of the page.
+Margin: The margin is the space between an element's border and adjacent elements. It creates a gap or separation between elements on the page. Margins can be applied to the top, right, bottom, and left sides of an element. The margin affects the positioning of elements in relation to each other within the layout.
+Understanding how these box model components interact is crucial for controlling the layout of elements on a webpage. Here are some key points to consider:
+
+Total Size: The total size of an element includes the content area, padding, border, and margin. When you specify the width and height of an element, it refers to the dimensions of the content area by default. However, the actual space occupied by the element in the layout is determined by the sum of the content area, padding, border, and margin.
+Box Sizing: By default, the box-sizing property is set to "content-box," which means that the specified width and height of an element do not include padding or border. As a result, adding padding or border to an element increases its total size.
+Overflow and Scrolling: If the content within an element exceeds its specified size (content area + padding + border), it can overflow. By default, overflow is set to "visible," allowing the content to extend beyond the element's boundaries. However, you can set overflow to "hidden," "scroll," or "auto" to control how overflow is handled. "Hidden" hides the overflow, "scroll" adds scrollbars to the element if needed, and "auto" adds scrollbars only when necessary.
+Properly understanding and utilizing the box model is essential for designing well-structured layouts. It allows you to control the size, spacing, and positioning of elements on a webpage. By carefully managing the content, padding, border, and margin, you can create visually pleasing designs that work harmoniously within the layout of your webpage.
+
+The box model provides the necessary tools to control the sizing, spacing, and placement of elements, ensuring they fit together seamlessly in your overall webpage design. By considering the content, padding, border, and margin of elements and their impact on the layout, you can create a visually balanced and aesthetically pleasing user interface.
+
+Example
+<div class="box"> This is the content of the box. </div> 
+
+.box { 
+    width: 200px; 
+    height: 150px; 
+    padding: 20px; 
+    border: 2px solid black; 
+    margin: 10px; 
+} 
+In this example, we have a <div> element with the class "box." Let's break down how the box model affects the layout of this element:
+
+Content: The specified width and height properties (width: 200px; height: 150px;) define the dimensions of the content area within the box. The content area is where the actual content of the element resides, which, in this case, is the text "This is the content of the box."
+Padding: The padding property (padding: 20px;) adds 20 pixels of space between the content and the element's border. This means that the actual space occupied by the content area is smaller than the overall width and height of the box due to the padding.
+Border: The border property (border: 2px solid black;) sets a solid black border around the box with a width of 2 pixels. The border surrounds the padding and content area, creating a visible boundary.
+Margin: The margin property (margin: 10px;) adds a margin space of 10 pixels around the border of the box. This margin creates a gap between this box and any neighboring elements in the layout.
+So, considering the dimensions specified, the box model components contribute to the layout as follows:
+
+Total Width: The total width of the box includes the content width, padding on the left and right sides, and the border width on both sides. In this example, the total width of the box is (200px + 20px + 20px + 2px + 2px) = 244px.
+Total Height: The total height of the box includes the content height, padding on the top and bottom sides, and the border width on the top and bottom. In this example, the total height of the box is (150px + 20px + 20px + 2px + 2px) = 194px.
+Outer Box Size: The outer size of the box, including content, padding, border, and margin, determines the space it occupies within the layout. In this example, the outer width of the box is (200px + 20px + 20px + 2px + 2px + 10px + 10px) = 264px, and the outer height is (150px + 20px + 20px + 2px + 2px + 10px + 10px) = 214px.
+Box Sizing property
+The box-sizing property controls how the total width and height of these boxes are calculated.
+
+By default, box-sizing is set to content-box, which means the width and height properties define the size of the content box only. Any border or padding is added to this base size, which can sometimes lead to layouts breaking or behaving unexpectedly.
+
+On the other hand, when box-sizing is set to border-box, the padding and border are included in the width and height of the element. This can simplify layout calculations as the element's size remains consistent regardless of padding and border values.
+
+When you want to apply the box-sizing property to specific elements rather than all elements on your page, you can do so by specifying the element type, class, or ID in your CSS rule. Here's an example of how you can do this:
+
+.container { box-sizing: border-box; } 
+In this example, the box-sizing property is applied only to HTML elements with the class container.
+
+The wildcard selector (*) in CSS is a powerful tool as it allows you to select and apply styles to all elements in a document. This means you can set box-sizing to border-box globally for all elements with a single line of code:
+
+* { box-sizing: border-box; }
+
+While it may seem a little daunting to apply a rule globally using the wildcard selector, when it comes to box-sizing, it’s a strategy that comes with numerous benefits. It helps to maintain consistency, simplifies layout calculations, and eases the process of creating responsive designs. However, as with all global resets, it's important to consider your project's specific needs and ensure this approach aligns with your overall styling strategy. -->
