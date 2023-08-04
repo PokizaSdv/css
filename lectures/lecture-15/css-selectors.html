@@ -1,0 +1,388 @@
+<!-- Universal Selector
+The * selector in CSS is known as the universal selector. This selector matches any element in the HTML document.
+
+For instance, if you would like to apply a style to every single element on a webpage, you could use the universal selector. Here's an example:
+
+In the above example, every element on the webpage would have its margin and padding set to 0, and the box-sizing property set to border-box. This is a common use case for the universal selector in a technique called a CSS reset, where you try to remove all the default browser styling to achieve more consistent results across different browsers.
+
+The universal selector can also be used in combination with other selectors. For example:
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+This will select any element that is a descendant of a <div> element, no matter the type or how deeply nested it is, and apply the style (in this case, the color red).
+
+Remember that using the universal selector can be expensive in terms of performance and can also lead to unexpected results due to its broad impact. It is often better to target more specific elements if possible. -->
+
+<!-- Child and Descendant Selectors
+The beauty of Cascading Style Sheets (CSS) lies in its ability to precisely target HTML elements and apply a wide range of styles. Two important types of selectors that CSS offers are child selectors and descendant selectors. Understanding how to use these selectors effectively can greatly enhance your styling capabilities. Let's delve into these two selectors and understand their differences and applications.
+
+Understanding Descendant Selectors
+Descendant selectors, also known as contextual selectors, allow you to select an element that is nested anywhere within another element. This is accomplished by specifying two or more selectors separated by a space.
+
+Imagine we have the following HTML:
+
+<div> 
+  <p>This is a paragraph inside a div.</p> 
+  <section> 
+    <p>This is a paragraph inside a section inside a div.</p> 
+  </section>
+</div> 
+If we apply the following CSS:
+
+div p { color: blue; } 
+Both paragraphs would be colored blue, because the CSS rule selects all <p> elements that are descendants (either direct or nested deeper) of a <div> element.
+
+Understanding Child Selectors
+Child selectors, on the other hand, are more specific than descendant selectors. They allow you to select elements that are direct children of another element. This is accomplished by specifying two selectors separated by a greater than sign (>).
+
+Here's an example of a child selector:
+
+div > p { color: red; } 
+In this example, Only the first paragraph would be colored red, because the CSS rule selects all <p> elements that are direct children of a <div> element. The <p> element nested inside the <section> is not a direct child of the <div>, so it would not be selected by this rule.
+
+Differences and Applications
+While both descendant selectors and child selectors allow you to apply styles based on an element's relationship with another element, they offer different levels of specificity. Descendant selectors are less specific, targeting an element nested anywhere within another element. Child selectors are more specific, only targeting direct children.
+
+The choice between these selectors often comes down to your specific use case. If you want to style an element no matter how deeply it is nested within another element, you'll use a descendant selector. If you want more precise control, styling only the direct children of an element, you'll use a child selector. -->
+
+<!-- Sibling Selectors
+In CSS, sibling selectors are an incredibly useful tool that allows you to select elements based on their sibling relationships within the HTML document tree. There are two types of sibling selectors: the adjacent sibling combinator and the general sibling combinator.
+
+Let's consider a HTML structure to better illustrate the usage of sibling selectors:
+
+<div> 
+  <h1>Title</h1>
+  <p>This is the first paragraph after the title.</p> 
+  <p>This is the second paragraph after the title.</p> 
+</div>
+Adjacent Sibling Combinator
+The adjacent sibling combinator (+) selects an element that is directly after another specific element, and both elements share the same parent.
+
+Here's an example:
+
+h1 + p { color: blue; } 
+In this example, the CSS rule will select any <p> element that directly follows an <h1> element, given they share the same parent. The selected <p> element will then have the color style set to blue.
+
+General Sibling Combinator
+The general sibling combinator (~) is a little more flexible. It selects all elements that follow after another specific element, and they all share the same parent.
+
+Here's an example:
+
+h1 ~ p { color: green; } 
+In this example, the CSS rule will select all <p> elements that follow an <h1> element under the same parent. All these selected <p> elements will then have the color style set to green.
+
+Summary
+If we apply the CSS rule h1 + p { color: blue; }, only the first paragraph will be colored blue because it's the adjacent sibling of the <h1> element.
+
+If we apply the CSS rule h1 ~ p { color: green; }, both paragraphs will be colored green because they're general siblings of the <h1> element, meaning they follow after the <h1> element under the same parent. -->
+
+<!--  Pseudo-classes
+Pseudo-classes in CSS are a type of selector used to target and style elements based on their unique states, target characteristics, and positions in the document structure. They are preceded by a colon : and can be appended to selectors to refine their specificity. Pseudo-classes make CSS more interactive and dynamic, allowing developers to create engaging user experiences.
+
+Pseudo-classes can be broadly classified into two categories: State pseudo-classes and Structural pseudo-classes.
+
+State pseudo-classes: These are based on the specific state of an element, often resulting from user interaction. They are dynamic and respond to user input. Examples include :hover, :focus, :active, :visited, and :checked.
+Structural pseudo-classes: These target elements based on their position within the document tree, allowing developers to style elements based on their hierarchical relationship with other elements. Examples include :first-child, :last-child, :nth-child(n), :nth-last-child(n), :nth-of-type(n), :first-of-type, :last-of-type, and :only-child.
+Let's dig deeper into each category and explore some examples:
+
+State Pseudo-classes
+Hover
+:hover: This is triggered when a user places the cursor over an element. It's often used to highlight an element when it's being pointed at.
+
+<button id="myButton">Hover Over Me!</button> 
+
+/* Changes button text to blue when hovered over */ 
+#myButton:hover { color: blue; } 
+Active
+:active: This is triggered when an element is being activated by the user. For instance, while a button is being pressed.
+
+/* Changes button text to red when it's being clicked */ 
+#myButton:active { color: red; } 
+Focus
+:focus: This is triggered when an element has received focus, often through the keyboard or programmatically. It's typically used on form inputs and links.
+
+/* Outlines the input in blue when it's focused */ 
+input:focus { outline: solid 2px blue; } 
+Visited
+:visited: This applies to links that the user has already visited.
+
+/* Changes color of visited links to gray */ 
+a:visited { color: gray; } 
+Structural Pseudo-classes
+:first-child: This targets the first child element of a parent. It doesn't care about the type of the element; it only matters if it's the first child in the sequence.
+:last-child: This targets the last child element of a parent, regardless of the type of the element.
+:nth-child(n): This targets the nth child of a parent, regardless of the type of the element.
+:first-of-type: Unlike :first-child, this targets the first child of a specific type under a parent.
+:last-of-type: This targets the last child of a specific type under a parent.
+First Child
+:first-child: This pseudo-class targets the first child element of its parent, regardless of what type that element is. If you have a parent element with multiple child elements, :first-child will select the very first child element in that parent.
+
+<div>
+    <h2>Heading</h2>
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+</div> 
+
+:first-child { color: red; } 
+In this case, 'Heading' will be red because it's the first child of the div
+
+Second Child
+:last-child: This pseudo-class targets the last child element of its parent, no matter what the element type is. If you have a parent element with multiple child elements, :last-child will select the very last child element.
+
+<div>
+    <h2>Heading</h2>
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+</div> 
+
+:last-child { color: red; } 
+Here, 'Paragraph 2' will be blue because it's the last child of the div,
+
+Nth Child
+nth-child(n): This pseudo-class targets the nth child element of its parent, regardless of the element type. 'n' can be any positive integer or a keyword like 'odd' or 'even'.
+
+<div>
+    <h2>Heading</h2>
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <p>Paragraph 3</p>
+    <p>Paragraph 4</p>
+    <p>Paragraph 5</p>
+    <p>Paragraph 6</p>
+</div> 
+
+:nth-child(2) { color: green; } 
+In this case, 'Paragraph 1' will be green because it's the second child of the div
+
+<div>
+    <h2>Heading</h2>
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <p>Paragraph 3</p>
+    <p>Paragraph 4</p>
+    <p>Paragraph 5</p>
+    <p>Paragraph 6</p>
+</div> 
+
+:nth-child(even) { color: green; } 
+In this case, 'Paragraph 1' (the 2nd child), 'Paragraph 3' (the 4th child), and 'Paragraph 5' (the 6th child) will be colored green. That's because they are in the 2nd, 4th, and 6th positions in the child list of the parent <div>, respectively, and therefore are considered "even" according to :nth-child(even).
+
+<div>
+    <h2>Heading</h2>
+    <p>Paragraph 1</p>
+    <p>Paragraph 2</p>
+    <p>Paragraph 3</p>
+    <p>Paragraph 4</p>
+    <p>Paragraph 5</p>
+    <p>Paragraph 6</p>
+</div> 
+
+:nth-child(odd) { color: green; } 
+In this case, 'Heading', 'Paragraph 2' (the 3rd child), 'Paragraph 4' (the 5th child), and 'Paragraph 6' (the 7th child) will be colored green. That's because they are in the, 1st, 3rd, 5th, and 7th positions in the child list of the parent <div>, respectively, and therefore are considered "odd" according to :nth-child(odd).
+
+Remember, :first-child, :last-child, and :nth-child(n) consider the position of the element in relation to all its parent's children -->
+
+<!--  Pseudo-elements
+Pseudo-elements in CSS are used to style specific parts of a selected element that aren't typically accessible through regular selectors. They are denoted by a double colon (::) syntax, though for historical reasons, single colon (:) syntax is also accepted for certain pseudo-elements.
+
+Some common pseudo-elements include ::before, ::after, ::first-letter, ::first-line, and ::selection.
+
+1. ::before: The ::before pseudo-element can be used to insert some content before the content of an element.
+
+<div>Some text</div> 
+
+div::before { content: "Hello "; } 
+In the above example, "Hello" will be added before "Some text".
+
+2. ::after: The ::after pseudo-element can be used to insert some content after the content of an element.
+
+<div>Some text</div> 
+
+div::after { content: " Goodbye"; } 
+In the above example, "Goodbye" will be added after "Some text", resulting in "Some text Goodbye".
+
+3. ::first-letter: The ::first-letter pseudo-element targets the first letter of a block of text.
+
+<p>This is a paragraph.</p> 
+
+p::first-letter { font-size: 2em; color: red; } 
+In this case, the first letter of the paragraph ("T" in "This") will be double the normal size and colored red.
+
+4. ::first-line: The ::first-line pseudo-element targets the first line of a block of text. The amount of text this selects depends on the width of the container.
+
+<p>This is a really long paragraph that goes onto multiple lines...</p> 
+
+p::first-line { font-weight: bold; color: blue; } 
+The first line of the paragraph will be bold and blue.
+
+5. ::selection: The ::selection pseudo-element applies styles to the part of the document that has been highlighted by the user (such as clicking and dragging the mouse across text).
+
+<p>This is some selectable text.</p> 
+
+::selection { background-color: lightblue; } 
+When you select some or all of the text in the paragraph, the selection will have a light blue background.
+
+Remember, to use these pseudo-elements effectively, the content property is often necessary for ::before and ::after to function as expected. -->
+
+<!--  Multiple Selectors
+Grouping Selectors
+In CSS, one of the ways to increase efficiency and reduce redundancy is to use multiple selectors. This allows you to apply the same set of styles to several selectors. By using multiple selectors, you can write less code, make your code easier to read and maintain, and create more consistent designs.
+
+Let's consider the following HTML:
+
+<div> 
+  <h1>Heading 1</h1> 
+  <h2>Heading 2</h2>
+  <p>Some text here.</p> 
+  <h3>Heading 3</h3> 
+</div> 
+To target multiple selectors, you list the selectors separated by commas. After defining your selectors, you open a set of curly braces and write your declarations inside, just like with a single selector. Here's a simple example:
+
+h1, h2, h3 { color: blue; } 
+In this example, the color: blue; style is applied to all <h1>, <h2>, and <h3> elements. All these elements will have blue text.
+
+Benefits of Grouping
+Using multiple selectors comes with several advantages:
+
+Less Redundancy: Without multiple selectors, if you wanted to apply the same styles to multiple elements, you would need to write the same CSS rule multiple times. Multiple selectors allow you to apply the same styles to different elements, all within a single rule.
+Easier Maintenance: When the styles for multiple elements are controlled by a single rule, making changes becomes easier. Instead of having to update several rules, you can make your changes in just one place.
+More Consistent Design: By applying the same styles to multiple elements, you can ensure that these elements are styled consistently across your entire website. -->
+
+<!-- Attribute and Attribute Value Selectors
+Attribute selectors in CSS are used to select elements based on their attribute or attribute value. Let's explore these in detail:
+
+Attribute Selectors
+An attribute selector targets elements that have a certain attribute, regardless of its value.
+
+<input type="text" name="firstname"> 
+<input type="password" name="password"> 
+<a href="https://www.example.com">Visit our website!</a> 
+
+input[name] { background: lightgray; } 
+In the above example, the CSS will apply a lightgray background to any input elements that have a name attribute, regardless of what the name is.
+
+Attribute Value Selectors
+An attribute value selector targets elements that have a specific attribute with a specific value.
+
+<input type="text" name="firstname">
+<input type="password" name="password"> 
+<a href="https://www.example.com">Visit our website!</a> 
+
+input[type="password"] { background: lightblue; } 
+In this case, the CSS will apply a lightblue background only to input elements that have a type attribute with the value password.
+
+Attribute Starts With Selectors
+This targets elements whose specified attribute's value starts with a certain string.
+
+<a href="https://www.google.com">Google</a> 
+<a href="https://www.yahoo.com">Yahoo</a> 
+<a href="http://www.example.com">Example</a> 
+
+a[href^="https"] { color: blue; } 
+The above CSS will change the text color to blue for any a elements whose href attribute's value starts with https.
+
+Attribute Ends With Selectors
+This targets elements whose specified attribute's value ends with a certain string.
+
+<img src="image.jpg"> 
+<img src="image.png"> 
+
+img[src$=".jpg"] { border: 2px solid black; } 
+In this case, the CSS will apply a black border to any img elements whose src attribute's value ends with .jpg.
+
+Attribute Contains Selectors
+This targets elements whose specified attribute's value contains a certain substring anywhere.
+
+<a href="https://www.google.com">Google</a> 
+<a href="https://www.yahoo.com">Yahoo</a> 
+<a href="http://www.example.com">Example</a> 
+
+a[href*="yahoo"] { color: purple; } 
+The above CSS will change the text color to purple for any a elements whose href attribute's value contains the substring yahoo. -->
+
+<!-- Compound Selectors
+Compound selectors are a combination of two or more selectors that select elements which satisfy all the given conditions simultaneously. They are a powerful tool when you want to apply styles only to a very specific set of elements.
+
+To construct a compound selector, you simply write the different simple selectors back-to-back without any spaces. Here are the different kinds of compound selectors you can make:
+
+Element and class
+This selector targets an HTML element with a specific class.
+
+<h1 class="highlight">Hello, World!</h1> 
+<h2 class="highlight">Hello again, World!</h2> 
+
+h1.highlight { color: orange; } 
+In this example, the CSS will apply the color orange to any h1 elements that also have the class highlight. The h2 with the class highlight won't be selected.
+
+Element and id
+This selector targets an HTML element with a specific id.
+
+<p id="special">This is a special paragraph.</p> 
+<h2 id="special">This is a special heading.</h2> 
+
+p#special { color: red; } 
+In this case, the CSS will apply the color red only to a p element that has the id special. The h2 with the same id won't be affected.
+
+Class and id
+This selector targets an HTML element with a specific class and id.
+
+<div id="important" class="highlight">Important Highlight</div> 
+<div id="unimportant" class="highlight">Unimportant Highlight</div> 
+
+.highlight#important { background-color: yellow; } 
+Here, the CSS will apply a yellow background color only to elements that have the class highlight and the id important. Even if other elements have the class highlight or the id important, they won't be selected unless they have both.
+
+Multiple classes
+This selector targets HTML elements that have all of the specified classes.
+
+<p class="large blue">This is a large, blue paragraph.</p>
+<p class="small blue">This is a small, blue paragraph.</p> 
+
+.large.blue { font-size: 2em; color: blue; } 
+In this case, the CSS will make the text blue and twice the normal size for all elements that have both the large and blue classes. If an element has only one of those classes, it won't be selected. -->
+
+<!-- CSS specificity
+Overview
+CSS specificity is the set of rules applied to CSS selectors to decide which style is applied to an element. It's a way of ranking CSS selectors to determine which selector has the highest priority and will be applied when there are multiple conflicting rules.
+
+Types of Selectors and Specificity
+CSS specificity values are determined by the types of selectors used. Here are the most common types:
+
+Inline Styles: These are styles applied directly to an element in the HTML via the style attribute. They have the highest specificity.
+ID Selectors: Selectors that target an ID (e.g., #myID) have the second highest specificity.
+Class, Attribute, and Pseudo-class Selectors: Class selectors (e.g., .myClass), attribute selectors (e.g., [type="text"]), and pseudo-classes (e.g., :hover) have the third highest specificity.
+Type Selectors and Pseudo-element Selectors: Element (or type) selectors (e.g., h1, div) and pseudo-elements (e.g., ::before, ::after) have the lowest specificity.
+Universal Selector, Combinators, and Negation Pseudo-class: The universal selector *, combinators (+, >, ~, ' ') and the negation pseudo-class :not() have no effect on specificity. Specificity is calculated based on the selectors inside the :not().
+Specificity Scoring
+The specificity score of a selector is usually represented as a set of 4 comma-separated values, a,b,c,d, as follows:
+
+a: If the declaration is from is a 'style' attribute rather than a rule with a selector (inline style), this is '1', otherwise it's '0'.
+b: Number of ID selectors.
+c: Number of class selectors, attributes selectors, and pseudo-classes.
+d: Number of type selectors and pseudo-elements.
+Example Scoring
+
+For a selector like p, its specificity is 0,0,0,1 (one type selector).
+For a selector like .notice, its specificity is 0,0,1,0 (one class selector).
+For a selector like #top, its specificity is 0,1,0,0 (one ID selector).
+For a selector like div#content .data img:hover, its specificity is 0,1,2,2 (one ID, two classes (data and :hover), and two type selectors (div and img)).
+Specificity Comparison
+CSS compares the specificity scores of conflicting rules similar to how software versions are compared. It starts from the left (most significant) and moves to the right. Here's how it works:
+
+Compare inline styles (value a): If one rule has more inline styles than the other, it wins. If it's a tie, move to the next step.
+Compare IDs (value b): If one rule has more IDs, it wins. If it's a tie, move to the next step.
+Compare classes, attributes, and pseudo-classes (value c): If one rule has more, it wins. If it's a tie, move to the next step.
+Compare elements and pseudo-elements (value d): If one rule has more, it wins.
+If all values are equal (a tie in specificity), the last rule defined wins. This follows the "cascading" part of CSS — the last rule defined "wins" in case of a tie in specificity.
+Example Comparison
+Let's consider an example where we have two selectors with the following specificities:
+
+Selector 1 (div#content .data img:hover): 0,1,2,2
+Selector 2 (body div img:hover): 0,0,1,3
+Although Selector 2 has more type selectors, Selector 1 has a higher value in the ID position, which is more significant. Therefore, Selector 1 wins the specificity comparison.
+
+The !important Exception
+There is an exception to the above rules. Adding !important to a style declaration makes it more specific than any other regular declarations. If two rules are both marked as !important, the specificity comparison is used to decide which to apply. However, using !important should be limited, as it can make CSS debugging more difficult and can lead to more complexity in CSS rule interactions. -->
