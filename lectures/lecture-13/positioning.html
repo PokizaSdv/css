@@ -1,0 +1,147 @@
+<!-- Why we need Positions
+Cascading Style Sheets, popular as CSS, is a pillar of modern web development, making websites attractive, interactive, and user-friendly. CSS provides designers and developers with a robust toolkit to precisely position, animate, and layout elements on a web page. One such tool within this extensive repertoire is the CSS position property. But why do we need positions in CSS? This article aims to demystify the necessity and importance of positions in CSS.
+
+Crafting Custom Layouts
+The position property in CSS is essential in crafting custom layouts. This feature is critical as it enables developers to place elements exactly where they want them to appear on the page, rather than being constrained by the traditional flow of HTML documents. Without the position property, developers would have to rely on standard document flow, which is not always suitable for creating complex or innovative designs.
+
+Overcoming Layout Limitations
+HTML follows a linear and block structure by default. While this structure is useful in some instances, it imposes limitations when developers want to design more complex, intricate layouts. The position property in CSS helps overcome these limitations, allowing developers to move beyond the standard document flow. It gives them the freedom to overlap elements, position elements fixed to the viewport, or even create sticky elements.
+
+Achieving Responsive Designs
+With the advent of mobile devices, responsive web design has become a cornerstone of web development. Designers must ensure that web pages display correctly on various screen sizes, from smartphones to large desktop monitors. The CSS position property is invaluable here, as it allows developers to manipulate elements depending on the viewport size. It's instrumental in creating designs that are not only visually appealing but also functional on different devices.
+
+Enhancing User Interactions
+The position property also allows the creation of more interactive and dynamic user interfaces. You can use it to design dropdown menus that appear when you hover over a parent element, modals that pop up in the center of the viewport, or floating action buttons that follow you as you scroll down a page. These interactive elements can significantly enhance the user experience, making your website more engaging and enjoyable to use.
+
+Conclusion
+In summary, the CSS position property is a powerful tool that every web developer should have in their arsenal. It allows for precise control over the layout and design of web pages, breaking free from the constraints of standard HTML document flow. Whether it's creating complex layouts, ensuring responsiveness, enhancing user interaction, or controlling z-index stacking, the position property is indispensable.
+
+Understanding the purpose and use of the position property in CSS is a crucial step towards becoming a proficient web developer. It opens up a world of possibilities, enabling you to bring your creative vision to life and design web pages that are visually impressive, highly interactive, and user-friendly. -->
+
+<!-- Normal Flow
+When elements are in the normal flow, they "respect" each other's space, meaning that they don't overlap or ignore each other. Each element takes up space in the layout, and other elements move to accommodate it.
+
+Block-level elements in normal flow stack vertically and respect the horizontal space, filling up the width of their parent container, while inline elements line up horizontally and only take as much space as needed for their content, wrapping to a new line if the parent container's width is filled.
+
+When you move elements out of the normal flow — using positioning techniques like position: absolute, position: fixed, or even floats — they no longer respect the space of other elements, which can lead to overlap or empty space in the layout.
+
+Short to say, changes to one element in the normal flow can affect the position of surrounding elements. -->
+
+<!-- Static Position
+Positions
+There are five kinds of positions
+
+Static*
+Relative: position: relative;
+Absolute: position: absolute;
+Fixed: position: fixed;
+Sticky: position: sticky
+Once you specify one of the last four positions, you will have access to  top, right, bottom, and left properties to move the element around
+
+We will discuss each position property in the following lectures.
+
+*Static
+This is the default value of the position property. Static-positioned elements are not affected by the top, right, bottom, and left properties. They follow the normal document flow. And you do not have to specify the following: position: static; explicitly.
+
+Note that static elements can't be moved from their natural position in the document flow.
+-->
+
+<!--  Relative
+A relatively positioned element is positioned relative to its normal (static) position. If you apply top, right, bottom, or left properties to a relatively positioned element, it will move from its normal position according to these values.
+
+A critical feature of position: relative is that even though the element moves, it still occupies the same physical space in the layout as it did before it was moved. Other elements don't adjust to fill in or move from the space it took up in its static position.
+div { 
+    position: relative;
+    top: 20px;  /* element moves 20px down from its original position */  
+    left: 10px; /* element moves 10px to the right from its original position */
+} -->
+
+<!-- Absolute
+An absolutely positioned element is also taken out of the normal document flow. It is positioned relative to its nearest positioned ancestor (one with a position other than static). If no such ancestor exists, the containing block will be the document's body element.
+
+top, right, bottom, and left properties are used to set its position.
+
+Like fixed elements, absolutely positioned elements can overlap other elements, and they don't leave a gap in the document where they would have been located.
+div { 
+    position: absolute; 
+    top: 50px; /* 50px down from the top edge of the nearest positioned ancestor */ 
+    left: 50px; /* 50px from the left edge of the nearest positioned ancestor */ 
+}  -->
+
+<!-- Values in Percentages
+The values assigned to the top, right, bottom, and left properties in CSS can be specified using various units, one of which is the percentage (%).
+
+When these properties are assigned a percentage value, it's calculated relative to the size of the nearest positioned (not static) ancestor element:
+
+If you apply a percentage value to top or bottom, it's calculated relative to the height of the nearest positioned ancestor. For example, if top is set to 20%, the element will be positioned down 20% of the height of the parent element from the top.
+Similarly, if you apply a percentage value to left or right, it's calculated relative to the width of the nearest positioned ancestor. For instance, if left is set to 30%, the element will be positioned 30% of the width of the parent element from the left.
+This behavior applies when the position property is set to absolute, relative, or fixed.
+
+It's important to note that if the nearest positioned ancestor element doesn't have a defined height or width, percentage values might not work as expected. For example, in the case of an absolutely positioned element, if no ancestors have a defined height or width, the percentages will be calculated based on the initial containing block, often the viewport.
+
+Here's a simple example:
+
+<div style="position: relative; height: 200px; width: 200px;"> 
+  <div style="position: absolute; top: 10%; left: 20%;"> 
+    I'm 10% down and 20% across from the top-left corner of my parent! 
+  </div>
+</div> 
+In this example, the inner div is positioned 20px (10% of 200px) from the top and 40px (20% of 200px) from the left of the outer div.
+
+Using percentages allows for more responsive designs, as the position of elements can adjust based on the size of their parent element or viewport.
+
+ -->
+
+<!-- Fixed
+An element with a fixed position is taken out of the document flow and positioned relative to the browser window. No matter how much you scroll, the fixed element will stay in the same place. top, right, bottom, and left properties are used to position it.
+
+It's important to note that fixed elements can overlap other elements, and they don't leave a gap in the document where they would have been located.
+div { 
+    position: fixed; 
+    bottom: 0; /* Always at the bottom of the viewport */ 
+    right: 0; /* Always at the right of the viewport */ 
+}  -->
+
+<!-- Sticky
+A sticky positioned element is a hybrid of relative and fixed positioning. It is treated as relative until its containing block crosses a specified threshold (defined with top, right, bottom, or left), at which point it becomes fixed.
+
+Sticky elements can be particularly useful for things like headers that you want to lock to the top of the viewport when scrolling down, but to flow naturally with the document when scrolling back up.
+
+div { 
+    position: sticky; 
+    top: 0; /* Sticks to the top of the viewport after you scroll past its initial position */ 
+}  -->
+
+<!-- Inset Property
+The inset property in CSS is a shorthand for the top, right, bottom, and left properties. It can be used with elements that have a position value other than static.
+
+The inset property is very similar to the margin and padding properties. It sets the offset between an element's outer edge and its containing block and it can take from one to four values.
+
+One value: The value is used for all four sides.
+Two values: The first value is used for the top and bottom sides, and the second value is used for the right and left sides.
+Three values: The first value is used for the top side, the second value is used for the right and left sides, and the third value is used for the bottom side.
+Four values: The values are used for the top, right, bottom, and left sides in that order (clockwise from top).
+Here's how to use inset:
+
+.element { 
+    position: absolute; 
+    inset: 10px 20px 30px 40px; /* top, right, bottom, left */
+} 
+In the example above, the .element will be positioned 10px from the top of the containing block, 20px from the right, 30px from the bottom, and 40px from the left.
+
+Additionally, inset has two other forms inset-block and inset-inline which specify the logical block and inline offsets respectively, mapping to physical directions depending on the element's writing mode, directionality, and text orientation. -->
+
+<!-- Z-index
+The z-index property controls the layering or order in which elements are displayed on a webpage. When you position an element using CSS, you can assign a z-index value to it to determine its placement in relation to other elements.
+
+Here's a simplified breakdown of using z-index:
+
+Ensure the element has a positioned CSS property, such as position: relative , position: absolute, or position: stickyThis allows you to control its layering.
+Add the z-index property to the element and assign it a value, such as z-index: 1, z-index: 2, and so on. Higher values bring elements closer to the front.
+Elements with a higher z-index value will be displayed in front of elements with lower values. If you want an element to appear on top of others, give it a higher z-index value.
+If multiple elements have the same z-index value, the one that appears later in the HTML code will be displayed on top.
+Remember that z-index only applies to positioned elements, so make sure to set the position property accordingly. -->
+
+<!-- Figma File
+Relative Position: https://www.figma.com/file/cwna72PntEX2Ckxm1MOUao/Untitled?type=design&node-id=1%3A2&t=TV4YGNzL4wOKgvUL-1
+Absolute Position: https://www.figma.com/file/cwna72PntEX2Ckxm1MOUao/Untitled?type=design&node-id=1%3A7&t=TV4YGNzL4wOKgvUL-1 -->
