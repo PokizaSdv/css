@@ -1,0 +1,247 @@
+<!-- Transform Property
+CSS transform allows you to modify the appearance of an element without affecting the flow of the document. It provides a way to visually manipulate an element by rotating, scaling, or translating it.
+
+Translate
+This function moves an element from its current position in either (or both) the X-axis (left-right) and the Y-axis (up-down). The amount of movement can be defined in various units such as pixels (px), percentage (%), etc.
+
+.box { transform: translate(50px, 50px); } 
+In the above example, the element with the class box will be moved 50px to the right and 50px down from its current position.
+
+TranslateX and translateY: These functions move an element along the X-axis (left-right) or the Y-axis (up-down) respectively.
+
+.box { 
+  transform: translateX(50px); 
+  /* or */ 
+  transform: translateY(50px); 
+} 
+In the first case, the element will move 50px to the right. In the second case, it will move 50px down.
+Scale
+This function changes the size of an element. It accepts one or two values — scale(sx) or scale(sx, sy). If only one value is provided, it's used to scale the element uniformly in both dimensions.
+
+.box { transform: scale(2); } 
+In this example, the element with the class box will be scaled to twice its original size.
+
+ScaleX and scaleY: These functions change the size of an element along the X-axis or the Y-axis, respectively.
+
+.box {
+    transform: scaleX(2);
+    /* or */
+    transform: scaleY(1.5);
+}
+In the first case, the element's width will be doubled. In the second case, the height of the element will increase by 50%.
+
+Rotate
+Rotate: This function rotates an element clockwise from its current position by a specified number of degrees.
+
+.box { transform: rotate(45deg); } 
+In this example, the element with the class box will be rotated 45 degrees clockwise.
+
+You can combine multiple transform functions by separating them with a space:
+
+.box { transform: translateX(50px) rotate(45deg); } 
+In this example, the element will first be moved 50px to the right and then rotated 45 degrees clockwise.
+
+Finally, the transform-origin property allows you to change the pivot point for the transformations:
+
+.box { transform: rotate(45deg); transform-origin: top left; } 
+In this case, the element will be rotated 45 degrees around its top-left corner, rather than its center. -->
+
+<!-- CSS Transitions
+Introduction
+CSS transitions provide a way to control the intermediate steps in a CSS animation sequence by establishing the transition between two CSS states. The reason why we use CSS transitions is to increase user engagement by creating an aesthetic, smooth, and interactive web experience. Transitions are usually applied as a response to user actions such as hover, focus, active, or upon changes in the DOM. This interactivity creates a more immersive and dynamic environment for users, resulting in better user experiences.
+
+Transition Property
+The transition-property is an essential component of CSS transitions. This property specifies which CSS properties should undergo the transition. If you want the transition to apply to more than one property, you can list them, separated by commas.
+
+div {
+  width: 200px;
+  height: 200px;
+  background-color: lightblue;
+  transition-property: background-color, width;
+}
+
+
+div:hover {
+  background-color: lightgreen;
+  width: 400px;
+}
+In this case, when you hover over the div, the background color and width will change from their initial state to a new state instantly.
+
+Specifying only the transition-property doesn't create a transition. The transition-property tells the browser which property will be animated, but without transition-duration, the transition is instant, meaning you won't see any gradual change.
+
+Transition Duration
+The transition-duration property allows you to specify how long the transition should take. It is measured in seconds (s) or milliseconds (ms).
+
+ div {
+  width: 200px;
+  height: 200px;
+  background-color: lightblue;
+  transition-property: background-color, width;
+  transition-duration: 2s, 1s;
+}
+Here, the background-color will transition over 2 seconds and the width will transition over 1 second.
+
+Transition Timing Function
+The transition-timing-function property describes how the intermediate property keyframes are calculated. It enables a transition to change speed over its duration. The timing function can take several forms, including linear, ease, ease-in, ease-out, ease-in-out, and cubic-bezier(n,n,n,n)*.
+
+ div {
+  width: 200px;
+  height: 200px;
+  background-color: lightblue;
+  transition-property: background-color, width;
+  transition-duration: 2s, 1s;
+  transition-timing-function: linear, ease-in-out;
+}
+In this scenario, the background-color will transition linearly, at a constant speed. The width transitions using an ease-in-out function, which means it starts slowly, speeds up, and then slows down again.
+
+In-Depth Timing Function
+In CSS, the transition-timing-function property allows you to control the speed of the transition effect. The property values can be 'linear', 'ease', 'ease-in', 'ease-out', and 'ease-in-out', each of which corresponds to a different speed curve.
+
+Linear
+The linear timing function applies the transition effect at the same speed from start to end. It has a constant speed with no acceleration or deceleration.
+
+.box {
+    width: 100px;
+    height: 100px;
+    background-color: skyblue;
+    transition: width 2s linear;
+}
+.linear:hover {
+    width: 200px;
+}
+
+
+Ease
+The ease timing function starts slow, becomes fast, and then ends slowly again. It's great for transitions that aren't user-initiated because the slow start makes the transition appear more natural.
+
+<div class="box ease">Ease</div>
+
+.ease {
+    transition: width 2s ease;
+}
+.ease:hover {
+    width: 200px;
+}
+
+
+Ease-in
+The ease-in timing function starts slow and then accelerates. With this function, the change is most noticeable at the end of the transition.
+
+<div class="box ease-in">Ease-in</div>
+
+.ease-in {
+    transition: width 2s ease-in;
+}
+.ease-in:hover {
+    width: 200px;
+}
+
+
+Ease-out:
+The ease-out timing function starts fast and then decelerates, slowing down towards the end. The change is most noticeable at the beginning of the transition.
+
+<div class="box ease-out">Ease-out</div>
+
+.ease-out {
+    transition: width 2s ease-out;
+}
+.ease-out:hover {
+    width: 200px;
+}
+
+
+Ease-in-out
+The ease-in-out timing function starts slow, speeds up in the middle, and then slows down again towards the end. It's often used for transitions that are user-initiated, such as on hover, because the slow start and end make the transition appear more gradual.
+
+<div class="box ease-in-out">Ease-in-out</div>
+
+.ease-in-out {
+    transition: width 2s ease-in-out;
+}
+.ease-in-out:hover {
+    width: 200px;
+}
+Ease vs Ease-in-out: The ease timing function is a bit quicker because it has less of a period of acceleration and deceleration than ease-in-out. Conversely, ease-in-out spends more time at the slower speeds during its start and end, making the change appear more gradual.
+
+Transition Delay
+The transition-delay property specifies a delay (in seconds) for the transition effect. It can be useful when you want to create a sequence of transitions on multiple elements or properties.
+
+ div {
+  width: 200px;
+  height: 200px;
+  background-color: lightblue;
+  transition-property: background-color, width;
+  transition-duration: 2s, 1s;
+  transition-timing-function: linear, ease-in-out;
+  transition-delay: 0s, 1s;
+}
+Here, the transition on background-color will start immediately upon hover, but the transition on width will start after a delay of 1 second.
+
+Shorthand transition Property
+The transition property is a shorthand property for the four transition properties mentioned above. It allows you to define the four properties in a single line.
+
+div { transition: background-color 2s linear 0s, width 1s ease-in-out 1s; } 
+This line of code is equivalent to the four lines of transition properties in the previous examples.
+
+Transitionable Properties
+It's important to note that not all CSS properties are transitionable. CSS properties that are lengths, percentages, or colors are typically transitionable, but properties that are discrete (like font-family or background-image) are not.
+
+Reading
+W3School Documentation: https://www.w3schools.com/css/css3_transitions.asp
+Mozilla MDN Documention: https://developer.mozilla.org/en-US/docs/Web/CSS/transition -->
+
+<!--  CSS Animations
+Transitions vs. Animations
+CSS Transitions are a way to animate HTML elements from one state to another, over a given duration. They are often used for things like changing the color of a button when the user hovers over it. Transitions are limited because they can only animate the change between two states and are usually triggered by user interactions.
+
+CSS Animations, however, are more flexible. They allow you to create complex, multi-step animations. You can control the intermediate states of the animation using keyframes, and they can run without any user interactions.
+
+Basic CSS Animations
+At the most basic level, a CSS animation requires two components:
+
+Keyframes: these define the steps of the animation.
+A CSS rule: this applies the animation to an element.
+Here's a simple example:
+
+/* Define the animation */
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Apply the animation */
+.spin {
+    animation: spin 2s linear infinite;
+}
+In this example, an element with the spin class will rotate 360 degrees. The animation will last 2 seconds and will repeat indefinitely (infinite).
+
+More Complex CSS Animations
+You can make more complex animations by adding more keyframes and manipulating the animation properties.
+
+Here's an example of a "bounce" animation:
+
+/* Define the animation */
+@keyframes bounce {
+    0%, 100% {
+        transform: translateY(0);
+        animation-timing-function: ease-in;
+    }
+    50% {
+        transform: translateY(-100px);
+        animation-timing-function: ease-out;
+    }
+}
+
+
+/* Apply the animation */
+.bounce {
+    animation: bounce 2s infinite;
+}
+In this animation, the element moves up by 100px and then back down. We've used the ease-in function for the first half of the animation and ease-out for the second half. This makes the element start slowly and end slowly.
+
+There are many more properties you can use to control your animations. For example, animation-delay lets you delay the start of an animation. -->
