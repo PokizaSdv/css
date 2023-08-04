@@ -1,0 +1,228 @@
+<!-- Relative units: em and rem
+The em unit in CSS
+The em unit in CSS is based on the current font-size of an element or, if that's not set, the nearest parent. This makes em a relative unit.
+
+For example, if we have a paragraph with a font size set to 20px, then 1em within that paragraph would be equal to 20px.
+
+HTML:
+
+<p class="large-text">This is a paragraph.</p> 
+CSS:
+
+.large-text {
+  font-size: 20px;
+}
+In this case, 1em would be 20px inside .large-text. For instance, if we set margin: 1em, that would equal a 20px margin.
+
+CSS:
+
+.large-text {
+  font-size: 20px;
+  margin: 1em; /* This is equivalent to 20px */
+}
+One problem with em is that it can compound. Since em is relative to the nearest parent font size, it can lead to unintended results when nesting elements.
+
+HTML:
+
+<div class="text">
+  Parent
+  <div class="text">Child</div>
+</div>
+CSS:
+
+.text {
+  font-size: 2em; /* This doubles the font size relative to the parent */
+}
+In this example, the child text would be 4 times the base font size, not 2, because its size is doubling the already doubled parent size.
+
+The rem unit in CSS
+To solve this problem, CSS3 introduced the rem unit, which stands for "root em". The rem unit is relative to the root—or the html—element. That means it can give the convenience of ems, but without the compounding problem.
+
+If we set the html font size to 20px, then 1rem would be 20px regardless of the parent element.
+
+HTML:
+
+<html>
+  <body>
+    <p class="some-text">This is some text.</p>
+  </body>
+</html>
+CSS:
+
+html {
+  font-size: 20px;
+}
+
+
+.some-text {
+  font-size: 1rem; /* This is equivalent to 20px */
+}
+In this case, regardless of the font size of any parent elements, 1rem within .some-text will always be equal to 20px.
+
+Both em and rem units are very useful in responsive design, allowing elements to scale up and down based on the user's preferences or device settings. They each have their own use cases, and understanding how they work can lead to more flexible and robust designs. -->
+
+<!--   Responsive Design
+Responsive web design is an approach to web design that makes web pages render well on a variety of devices and window or screen sizes. It's about designing and coding a website so that it provides an optimal viewing experience — ease of reading and navigation with a minimum of resizing, panning, and scrolling — across a wide range of devices (from desktop computer monitors to mobile phones).
+
+Here's why it's important:
+
+Increasing Mobile Usage: More people are using mobile devices to access the web. In many parts of the world, mobile traffic has already overtaken desktop traffic. If your website isn't optimized for mobile, you risk losing a large chunk of your audience.
+Better User Experience: Responsive design provides a much better user experience for those visiting your website on a mobile device. If a user has to constantly zoom in, scroll around, or struggle with small buttons, they're likely to get frustrated and leave. Responsive design allows for easy reading and navigation without the need for awkward adjustments.
+SEO Benefits: Google has stated that responsive design is its recommended mobile configuration, and even goes so far as to refer to responsive design as the industry best practice. Google has moved to mobile-first indexing, which means Google predominantly uses the mobile version of the content for indexing and ranking. Hence, a responsive website will lead to a better search ranking.
+Easier Maintenance: Without responsive design, you're looking at maintaining separate websites for desktop and mobile. This means double the code and double the SEO efforts. A responsive design's "one size fits all" approach means less headache for developers, business owners, and consumers.
+Cost-Effective: It's far cheaper and more efficient to maintain a single responsive site than it is to maintain a separate mobile site. This is particularly important for smaller businesses and those just starting out.
+Adaptability: Responsive web design ensures that your website looks and functions well on future devices, to which you can't adapt your fixed layout.
+In conclusion, responsive design is not just a trend or a nice-to-have feature, it's a necessity in the digital age. With a growing variety of screen sizes and devices, designers and developers need to ensure that websites are flexible and work seamlessly on any platform. It enhances the user experience and provides the flexibility to reach audiences on their preferred devices. -->
+
+<!--   Media Query.
+Media queries are a tool in CSS that allow for styles to be applied conditionally based on the capabilities or properties of the user's device or browser. They are a fundamental component of responsive web design, which is a design approach aimed at making web pages look and function well on a variety of devices and window sizes.
+
+You can think of a media query as an if-statement in CSS: if the device matches these certain conditions, then apply these styles.
+
+A basic media query consists of a media type and a condition that checks for certain media features. Media types include all, print, screen, speech, and more, but in modern usage, 'all' and 'screen' are the most common types.
+
+However, most media queries do not include a media type and default to 'all', focusing instead on media features, like width, height, resolution, and more.
+
+@media (max-width: 600px) {
+  /* CSS rules apply for device width less than or equal to 600px */
+}
+The above media query will apply the CSS rules enclosed within if the device's viewport width is 600px or less. The px unit represents pixels, but other units like em or rem can also be used.
+
+A crucial part of media queries is the concept of breakpoints. Breakpoints are the values at which a website's content will respond to provide the user with the best possible layout to consume the information. When the viewport changes dimensions and hits these specified points, a different set of styles are applied to the webpage.
+
+Bereakpoints
+Here are a few common breakpoints used in many responsive designs:
+
+Small devices (phones): 0 to 600px
+Medium devices (tablets): 601px to 1024px
+Large devices (laptops, desktops): 1025px and above
+Extra large devices (large desktops, TVs): 1824px and above
+These are, of course, just guidelines, and the exact breakpoints you choose will depend on the content of your site.
+
+Example
+Now let's consider an example where we have two div elements side by side, and we want to stack them vertically on smaller screens. For this, we can use a media query.
+
+<div class="box">Box 1</div>
+<div class="box">Box 2</div>
+
+
+.box {
+  display: inline-block;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+
+@media (max-width: 600px) {
+  .box {
+    display: block;
+    width: 100%;
+  }
+}
+In the above example, we're applying a display: block; rule to the divs when the viewport width is 600px or less, causing the divs to stack vertically. When the viewport is greater than 600px, the divs will be side by side.
+
+The two divs start as inline-block and occupy 50% of the width each. As the screen width reduces and hits the 600px breakpoint, the media query activates and the divs become block-level elements, each taking up 100% width and stacking vertically.
+
+With this approach, we can change layout, typography, image sizes, and more to adapt to different screens and devices, ensuring a good user experience across all platforms.
+
+Mobile First
+The min-width approach (also known as mobile-first) and the max-width approach (desktop-first) determine the direction of your CSS rules. The mobile-first approach starts by styling for smaller screens, and then gradually adds rules for larger screens. The desktop-first approach, on the other hand, starts with styles for large screens, and gradually overrides rules for smaller screens.
+
+Here is an example of mobile-first (min-width) vs. desktop-first (max-width) approach using our box example.
+
+Mobile-first (min-width):
+
+/* Mobile styles (default) */
+.navbar, .footer {
+  display: block;
+}
+
+
+.responsive-image, .text-content {
+  width: 100%;
+}
+
+
+/* Tablet styles */
+@media (min-width: 600px) {
+  .navbar, .footer {
+    padding: 0 20px;
+  }
+
+
+  .responsive-image, .text-content {
+    display: inline-block;
+    width: 45%; /* Leaving some space between the image and the text */
+  }
+}
+
+/* Desktop styles */
+@media (min-width: 900px) {
+  .navbar {
+    position: fixed;
+    width: 200px;
+    height: 100%;
+  }
+
+  .main-content, .footer {
+    margin-left: 200px; /* To make room for the fixed navbar */
+  }
+
+  .responsive-image, .text-content {
+    width: 40%; /* A bit more space between the image and the text on larger screens */
+  }
+}
+Desktop First
+In the desktop-first approach, we start by writing CSS for desktop devices. Then, we use media queries to target smaller screens and adjust styles accordingly.
+
+Desktop-first (max-width):
+
+/* Desktop styles (default) */
+.navbar {
+  position: fixed;
+  width: 200px;
+  height: 100%;
+}
+
+.main-content, .footer {
+  margin-left: 200px; /* To make room for the fixed navbar */
+}
+
+.responsive-image, .text-content {
+  display: inline-block;
+  width: 40%; /* A bit more space between the image and the text on larger screens */
+}
+
+/* Tablet styles */
+@media (max-width: 899px) {
+  .navbar {
+    position: static;
+    width: auto;
+    height: auto;
+  }
+
+
+  .main-content, .footer {
+    margin-left: 0;
+  }
+
+
+  .responsive-image, .text-content {
+    display: inline-block;
+    width: 45%; /* Leaving some space between the image and the text */
+  }
+}
+
+/* Mobile styles */
+@media (max-width: 599px) {
+  .navbar, .footer {
+    padding: 0;
+  }
+
+
+  .responsive-image, .text-content {
+    display: block;
+    width: 100%;
+  }
+}
+In conclusion, media queries offer a powerful way to adapt your website's design to a variety of devices and screen sizes. They provide the tools you need to ensure a good user experience across all platforms and devices. -->
